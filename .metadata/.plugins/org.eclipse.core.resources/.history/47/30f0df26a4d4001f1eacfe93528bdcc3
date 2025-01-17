@@ -1,0 +1,26 @@
+package com.example.demo.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.demo.entity.UserLogin;
+import com.example.demo.repo.UserRepo;
+
+public class UserService {
+
+	@Autowired
+	UserRepo userRepo;
+	public UserLogin saveDetails(UserLogin userLogin) {
+		
+		return userRepo.save(userLogin);
+	}
+	
+	
+	
+	
+
+	public Optional<UserLogin> showDetails(String userName, String password) {
+	return userRepo.findById(userName);
+	}
+}

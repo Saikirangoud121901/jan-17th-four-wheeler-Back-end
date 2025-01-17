@@ -1,0 +1,20 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.VechicleEntity;
+import com.example.demo.repo.VechicleRepo;
+
+@Service
+public class VechicleService {
+@Autowired
+	VechicleRepo vechicleRepo;
+	public VechicleEntity SaveNewVechicle(VechicleEntity vechicleEntity) {
+		// TODO Auto-generated method stub
+		return vechicleRepo.save(vechicleEntity);
+	}
+	
+	
+
+}
