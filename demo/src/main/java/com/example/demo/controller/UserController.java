@@ -20,14 +20,16 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	
 	@PostMapping("/LoginDetails/add")
-	public UserLogin AddNewUser(@RequestBody UserLogin userLogin) {
-		return userService.saveDetails(userLogin);		
+	public String AddNewUser(@RequestBody UserLogin userLogin) {
+		
+		String res= userService.saveDetails(userLogin);	
+	return res;
 	}
+	
 	@GetMapping("/LoginDetails/get")
 	public boolean AddNewUser(@RequestParam String userName, String password) {
-		return userService.showDetails(userName,password);		
+	     return userService.showDetails(userName,password);		
 	}
 	
 }

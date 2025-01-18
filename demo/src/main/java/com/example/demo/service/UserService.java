@@ -14,9 +14,17 @@ public class UserService {
 	UserRepo userRepo;
 	
 	
-	public UserLogin saveDetails(UserLogin userLogin) {
+	public String saveDetails(UserLogin userLogin) {
+		String res="";
+		try {
+		userRepo.save(userLogin);
+		res="Succesfully saves new user----->"+userLogin.getUserName();
 		
-		return userRepo.save(userLogin);
+		}catch (Exception e) {
+			res="not able to save new user----->"+userLogin.getUserName();
+		}
+		
+		return res;
 	}
 	
 	
